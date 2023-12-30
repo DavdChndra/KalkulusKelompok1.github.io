@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>DavdChndra</title>
+  </head>
+  <body>
+    <div class="container">
+      <h4 class="text-center my-5"><b>KALKULUS</b> | <b class="text-danger">Kelompok 1 - Project Based 1</b></h4>
+
+      <div class="card text-center mb-5">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="kalkulus-tab" data-bs-toggle="tab" data-bs-target="#kalkulus" type="button" role="tab" aria-controls="kalkulus" aria-selected="false">Kalkulus</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="kelompok-tab" data-bs-toggle="tab" data-bs-target="#kelompok" type="button" role="tab" aria-controls="kelompok" aria-selected="false">Kelompok</button>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+            <!-- Home -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="text-start">
+                <div class="scenario bg-light p-4 rounded-2 mb-3">
+                  <h3>Scenario</h3>
+                  <p>
+                    Bayangkan Anda seorang analis data di perusahaan transportasi, dan Anda ditugaskan untuk menganalisis hubungan antara kecepatan kendaraan dan waktu yang diperlukan untuk menempuh jarak tertentu. Perusahaan ingin memahami
+                    bagaimana memprediksi waktu yang dibutuhkan untuk perjalanan pada kecepatan yang berbeda.
+                  </p>
+                </div>
+                <div class="problem bg-light p-4 rounded-2">
+                  <h3>Problem</h3>
+                  <p>
+                    Perusahaan memiliki kumpulan data berupa pasangan kecepatan dan jarak, dan mereka ingin Anda menemukan fungsi yang menghubungkan waktu dengan kecepatan. Dalam kata lain, mereka ingin menghitung waktu yang dibutuhkan
+                    untuk menempuh jarak tertentu pada berbagai kecepatan.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Form Kalkulus -->
+            <div class="tab-pane fade" id="kalkulus" role="tabpanel" aria-labelledby="kalkulus-tab">
+              <h4 class="mt-3 mb-4 text-uppercase">Menghitung jarak yang ditempuh pada waktu dan kecepatan tertentu</h4>
+              <div class="inputan">
+                <form class="row g-3 mt-4">
+                  <div class="col-md-4">
+                    <label for="waktu" class="form-label fw-bold">Input Waktu</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Waktu Dalam Jam" id="waktu" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="kecepatan" class="form-label fw-bold">Input Kecepatan</label>
+                    <input type="text" class="form-control" placeholder="Masukkan Kecepatan Dalam KM" id="kecepatan" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="hasil" class="form-label fw-bold">Menghasilkan Jarak</label>
+                    <input type="text" class="form-control" placeholder="Hasil Perhitungan" id="hasil" readonly disabled />
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-outline-secondary mb-3" type="button" onclick="hitung()">Hitung</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Kelompok -->
+            <div class="tab-pane fade" id="kelompok" role="tabpanel" aria-labelledby="kelompok-tab">
+              <h4 class="mt-3 mb-4 text-uppercase">Nama Anggota Kelompok</h4>
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                  <div class="card text-dark bg-light">
+                    <h5 class="Nama mt-3">Ardan Pratama</h5>
+                    <h6 class="NIM mb-4 text-danger fw-bold">103062300049</h6>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-dark bg-light">
+                    <h5 class="Nama mt-3">David Chandra</h5>
+                    <h6 class="NIM mb-4 text-danger fw-bold">103062330056</h6>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-dark bg-light">
+                    <h5 class="Nama mt-3">Louis Andreas</h5>
+                    <h6 class="NIM mb-4 text-danger fw-bold">103062330041</h6>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-dark bg-light">
+                    <h5 class="Nama mt-3">Reyhan</h5>
+                    <h6 class="NIM mb-4 text-danger fw-bold">103062300057</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function hitung() {
+        var waktu = parseFloat(document.getElementById("waktu").value);
+        var kecepatan = parseFloat(document.getElementById("kecepatan").value);
+        var hasil;
+
+        hasil = kecepatan * waktu;
+
+        document.getElementById("hasil").value = hasil;
+      }
+    </script>
+
+    <!-- Bootstrap dan AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
